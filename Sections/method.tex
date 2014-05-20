@@ -1,0 +1,40 @@
+\section{Method}
+
+
+\subsection{Preparing the right input for the classifier}
+
+Following your questions on how I generated the input for the classifier from Benjamin's raw data, I could recall what input I prepared. It's quite simple and robust, and now I see better why it seems to classify quite well, maybe better that other methods.
+
+The Neurosky software (on John's netbook) computes a power spectrum every half second. Then, the maximum frequency is 256Hz (because the maximum sampling rate of Neurosky hardware is 512Hz). The power spectrum is computed with discrete bins of 1/4 Hz. Each bin represents the intensity of activation of a frequency range (e.g., between 1 and 1.25 Hz) in a half-second time window. There are therefore 1024 values reported for one power spectrum. Our samples are more or less 10 seconds, which means around 20 power spectra computed per sample. Based on the signal quality also recorded some power spectra are removed (Benjamin knows the exact filtering method).
+
+The spirit of the method developed consists in two steps : (i) build a statistical significance out of the n power spectra produced in each sample, and (ii) "compress" the information to have vector of arbitrary size < 1024.
+
+For each bin of 1/4 Hz, we can compute a median value out of the n power spectra generated for one sample.  We obtain a discrete probability density function (pdf) with each bin being the median of the corresponding bins in the n power spectra. At this stage, we have a discrete pdf of 1024 bins for the whole sample. This method is called a "stacking" of several pdf into one representing the statistical average of all the others.
+
+However, for a classifier, it is desirable to have less values (i.e., of the order of 10 to 100). But we don't want to lose information on the whole pdf. Binning the pdf is a simple way to "compress" the information contained. The basic idea is to take the median of several bins. For instance, four contiguous bins (1-1.25,1.25-1.5,1.5-1.75,1.75-2) have the values (4,4,5,5) the value resulting from combining these values into one bin would be 4.5. The pdf is heavy-tailed and it is desirable to arrange the "compression" bins in a way it provides relevant information on the whole distribution. One way to do this efficiently is to arrange the compression bins in a logarithmic fashion.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5in]{Figures/binned_EEGpowerspectrum.png}
+\caption{ }
+\label{binnedEEGpowerspec}
+\end{center}
+\end{figure}
+
+Figure \ref{binnedEEGpowerspec} shows, in double logarithmic scale, the original 1024 bins (blue dots) of the pdf obtained from averaging the n power spectra of one sample, and the resulting "compressed"  pdf with 100 log-bins. As we can see, the log-binning preserves very well the structure of the pdf.
+
+In summary, we have built a probability density function of brain frequencies as captured by the Neurosky hardware, from the n power spectra of each sample. We have then used a log-binning method to reduce the 1024 bins from the original power spectrum to an arbitrary smaller number of log-bins (e.g., 100 log-bins on the Figure). This method makes a sort of statistical averaging by stacking, and then "compresses" the result in way that it is easy to use in a classifier.
+
+{\bf NB:} I believe that the classifier does well because it can efficiently capture the overall level of activity for all log-bins, but also more local deviations. On the figure, we can see some local peaks mostly between $10^1$ and $10^1.5$, but in all other parts of the pdf though in a less visible way. I believe these deviations are quite unique and can make the difference in the classifier. We should indeed check this further if we want to understand to origins of the good results.
+
+{\bf Side note:} one way to investigate further would be to see indeed to what extent the "compression", i.e. the small number of log-bins, affects the quality of the classifier. Another quite promising further research direction, would be to determine the minimum number of n power spectra, which should be taken into account to reach a target level of correct classification. This would be useful to determine what should be the most adequate sample size for a certain level of identification. This level might of course vary as a function of subjects and tasks.
+
+
+\subsection{Classifier}
+
+\begin{itemize}
+  \item linearSVC uses a [linear kernel](\url{http://en.wikipedia.org/wiki/Support_vector_machine#Linear_SVM}) as opposed to a nonlinear kernel. i used it because nonlinear kernels did as well or worse, and took *much* longer. LinearSVC works the same as the SVC i was using last time around (which also had a linear kernel), it's just more performant because it's in C
+  \item 
+  \item 
+\end{itemize}
+
