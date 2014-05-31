@@ -73,6 +73,34 @@ same........and we're sure...............3.5x increase in time for each bin decr
 ## effects of bins/length on bestcase
 
 
+X = bins
+y = bestcase
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               bestcase   R-squared:                       0.488
+Model:                            OLS   Adj. R-squared:                  0.488
+Method:                 Least Squares   F-statistic:                     1403.
+Date:                Fri, 30 May 2014   Prob (F-statistic):          4.47e-216
+Time:                        11:41:10   Log-Likelihood:                -1507.7
+No. Observations:                1470   AIC:                             3017.
+Df Residuals:                    1469   BIC:                             3023.
+Df Model:                           1                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+bins           0.0032   8.65e-05     37.452      0.000         0.003     0.003
+==============================================================================
+Omnibus:                      320.042   Durbin-Watson:                   0.070
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              556.390
+Skew:                          -1.436   Prob(JB):                    1.52e-121
+Kurtosis:                       3.912   Cond. No.                         1.00
+==============================================================================
+
+
+
+
+
 
 
 
@@ -80,7 +108,6 @@ bestcase ~ bins + lengths
 ---
 
 *pandas OLS:*
-
 Number of Observations:         1470
 Number of Degrees of Freedom:   3
 
@@ -211,29 +238,6 @@ Kurtosis:                       4.250   Cond. No.                     7.84e+03
 
 
 
-X = bins
-y = bestcase
-
-                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:               bestcase   R-squared:                       0.488
-Model:                            OLS   Adj. R-squared:                  0.488
-Method:                 Least Squares   F-statistic:                     1403.
-Date:                Fri, 30 May 2014   Prob (F-statistic):          4.47e-216
-Time:                        11:41:10   Log-Likelihood:                -1507.7
-No. Observations:                1470   AIC:                             3017.
-Df Residuals:                    1469   BIC:                             3023.
-Df Model:                           1                                         
-==============================================================================
-                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
-------------------------------------------------------------------------------
-bins           0.0032   8.65e-05     37.452      0.000         0.003     0.003
-==============================================================================
-Omnibus:                      320.042   Durbin-Watson:                   0.070
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):              556.390
-Skew:                          -1.436   Prob(JB):                    1.52e-121
-Kurtosis:                       3.912   Cond. No.                         1.00
-==============================================================================
 
 
 
@@ -279,6 +283,32 @@ Kurtosis:                       4.271   Cond. No.                         10.3
 
 
 ## effects on average
+
+
+
+X = bins
+y = avg
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    avg   R-squared:                       0.493
+Model:                            OLS   Adj. R-squared:                  0.492
+Method:                 Least Squares   F-statistic:                     1427.
+Date:                Fri, 30 May 2014   Prob (F-statistic):          1.01e-218
+Time:                        11:42:00   Log-Likelihood:                -1025.4
+No. Observations:                1470   AIC:                             2053.
+Df Residuals:                    1469   BIC:                             2058.
+Df Model:                           1                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+bins           0.0024   6.23e-05     37.770      0.000         0.002     0.002
+==============================================================================
+Omnibus:                      310.853   Durbin-Watson:                   0.084
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              532.662
+Skew:                          -1.400   Prob(JB):                    2.16e-116
+Kurtosis:                       3.924   Cond. No.                         1.00
+==============================================================================
 
 
 
