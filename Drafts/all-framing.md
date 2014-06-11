@@ -1,16 +1,20 @@
-Brain-computer interface (BCI) systems establish a direct communcative link between the brain and an electronic system. \ref{wolpow2002} While early work required electrodes implanted in the user's skull, newer work has used non-invasive electroencephelography (EEG) to build proof-of-concepts like brain-controlled keyboards [hex-o-spell], wheelchairs [millan], and prosthetic arms and hands [tobi]. 
+Brain-computer interface (BCI) systems establish a direct communcative link between the brain and an electronic system. \ref{wolpow2002} While the earliest systmes required [[[ electrodes implanted in the user's s ]]], newer work has used non-invasive electroencephelographs (EEG) to build proof-of-concept BCI systems ranging from brain-controlled keyboards [hex-o-spell] and wheelchairs [millan] to prosthetic arms and hands [tobi]. 
 
-There are a few reasons why these systems have not found wide adoption outside the lab. For one, they require large, complex scanning caps, which are impractical for use by disabled persons and generally undesirable for ergonomic reasons. Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (e.g., cellphones, embedded hardware).
+There are a few reasons why these systems have not been widely deployed outside of lab settings. For one, they require large, complex scanning caps, which are impractical for disabled users and generally undesirable for ergonomic reasons. Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (e.g., cellphones, embedded hardware, etc).
 
-For BCI systems to reach wider adoption, they must acheive the same bitrates with fewer, and more comfortable sensors. Since naturalistic environments will also introduce interference in the signal, they must also cope with lower signal quality compared to their lab-based counterparts. How can we more effectively extract signal from EEG electrodes? That is, what is the least data we need to produce effective BCI?
+For BCI systems to reach wider adoption, they must acheive the same bitrates with fewer, and more comfortable sensors. Since naturalistic environments will also introduce interference in the signal, they must also cope with lower signal quality compared to their lab-based counterparts. How can we more effectively extract signal from EEG electrodes? 
 
-In this study, we use recordings from a single, dry electroencephalographic (EEG) sensor to interrogate the efficacy of a signal quantization technique based on the logarithmic binning of power spectra over time. We model how our technique affects the accuracy of the BCI system's classifier and how it impacts the classifier's computational performance.
+In this study, we use recordings from a single, dry electroencephalographic (EEG) sensor to interrogate the efficacy of a signal quantization technique based on the logarithmic binning of power spectra over time. We model how our technique impacts the accuracy of the BCI's classifier and how it impacts the classifier's computational performance, especially at the short recording lengths necessary for quick, real-time interaction with computer systems. 
 
-# BCI "in the wild"
+{{{{{not sure about this: By modelling how these factors scale relative to one another, we hope to work toward a theoretical framework for optimizing classification accuracy, computational expense and information transfer rate (ITR) in "in the wild" BCI systems.}}}}}}
 
-The wide adoption of BCI relies on two major streams of research: (i) the development of ergonomic sensors for use in naturalitic settings and (ii) the ability to adapt lab-developed BCI strategies to the new constraints that these sensors introduce on our signal processing abilities. {........steal line on consumer EEG devices.........} Compared to their lab-based counerparts, these devices have many fewer electrodes, thus limited spatial resolution, and produce significantly noisier signals, as they do not require the application of conductive gels or the precise placement of sensors.
+# "In the wild" brain-computer interface
 
-While past work has built proof-of-concept BCI devices with consumer-grade hardware, {..........little work has systematically investigated....??????....}
+The wide adoption of BCI relies on two major streams of research: (i) the development of ergonomic sensors suitable for use in naturalitic settings and (ii) the ability to adapt lab-developed BCI strategies to the new constraints imposed by that these sensors. {........steal line on consumer EEG devices.........} Compared to their lab-based counerparts, ]these devices have many fewer electrodes, thus limited spatial resolution, and produce significantly noisier signals, as they do not require the application of conductive gels or the precise placement of sensors.
+
+Past work has built several proof-of-concept BCIs with consumer-grade devices. impressive emotiv studies.....intro neurosky, several studies.
+
+BCIs built with consumer-grade hardware still have relatively low ITR compared to those with full scanning caps (a maximum bits/sec was acheived by []). {{butttt.................did any of them really try calibratino/co-adaptive strategy?}}
 
 
 # co-adaptive BCI
