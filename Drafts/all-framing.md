@@ -1,8 +1,8 @@
 Brain-computer interface (BCI) systems establish a direct communcative link between the brain and an electronic system. \ref{wolpow2002} While early systmes required [[[ electrodes implanted in the user's s ]]], newer work has used non-invasive electroencephelographs (EEG) to build proof-of-concept BCI systems ranging from brain-controlled keyboards [hex-o-spell] and wheelchairs [millan] to prosthetic arms and hands [tobi]. 
 
-There are a few reasons why these systems have not been widely deployed outside of lab settings. For one, they require large, complex scanning caps, which are impractical for disabled users and generally undesirable for ergonomic reasons. Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (eg., smartphones, watches, embedded systems in scanning devices, etc).
+There are a few reasons why these systems have not been widely deployed outside of lab settings. For one, they require large, complex scanning caps, which are impractical for disabled users and generally undesirable for ergonomic reasons. \ref{gotta be a good ergonomics ref no?} Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (eg., smartphones, watches, embedded systems in scanning devices, etc). \ref{gotta be a ref out there}
 
-For BCI systems to find adoption "in the wild," they must acheive the acceptable bitrates with fewer and more comfortable sensors. They must calibrate to individual users quickly, and must run on mobile & wearable computing architectures. Since naturalistic environments will also introduce interference in the signal, they must also cope with lower signal quality than their lab-based counterparts. 
+For BCI systems to find wide adoption "in the wild," they must acheive acceptable information transfer rates (ITR) with fewer and more comfortable sensors. They must calibrate to individual users quickly, and must run on mobile & wearable computing architectures. Since naturalistic environments will also introduce interference in the signal, they must also cope with lower signal quality than their lab-based counterparts. 
 
 Can a small number of inexpensive, low-quality sensors acheive acceptable accuracy after a brief, online calibration phase? In this study, we use recordings from a single, dry electroencephalographic (EEG) sensor to interrogate the efficacy of a novel signal extraction technique based on the logarithmic binning of power spectra over time.
 
@@ -26,7 +26,7 @@ In order to compensate for variability in BCI signals, recent work has leveraged
 
 ## Online co-adaptation 
 
-Blankertz et al (---) frame BCI learning as a cooperation between two adaptive systems: the user's brain and the BCI's software algorithms. By building interfaces in which the user and the BCI "co-adapt" during an interactive calibration step, past work has turned BCI "novices" into competent users over the course of hours instead of days or weeks, and without manual calibration by a researcher. \ref{} 
+Coming to control a BCI system requires more than adaptive algorithms. Blankertz et al (---) frame BCI learning as a cooperation between two adaptive systems: the BCI's algorithms and the human user. By building interfaces in which the user and the BCI "co-adapt" during an interactive calibration step, past work has turned BCI "novices" into competent users over the course of hours instead of days or weeks, and without manual calibration by a researcher. \ref{} 
 
 Past work on co-adaptive BCI has used a several-step approach in which the system feeds preprocessed data to an adaptive classifier, which uses new and past data to optimize and recalculate itself, either during intermittant, offline steps \ref{blankertz1,blankertz2} or continuously online \ref{vidaurre2006}. During calibration, users perform "labeled" (that is, known) mental gestures in order to produce samples for the classifier. Meanwhile, the classifier performs various experiments in which it attempts to establish which features of the data are most informative. Systems may generate multiple models in parallel and combine their decisions democratically (an "ensemble approach"). After several calibration steps, the system is able to estimate the user's control by assessing its model's accuracy on samples it has already recorded.
 
@@ -51,7 +51,7 @@ Our research involved human subjects, and our experimental procedures were appro
 
 ## Tasks
 
-...............steal from passthoughts latex.................
+...............steal from passthoughts.................
 
 ## Data Analysis
 
@@ -71,16 +71,82 @@ The majority of BCI systems bandpass this frequency spectrum between {x Hz..y Hz
 
 Support vector machines (SVM) are a set of supervised machine learning methods that take labeled example data to create a model that can be used to predict the classes of unlabeled data. SVMs use a hyperplane (an n-dimensional construct in n+1 dimensional space) to draw discriminatory boundaries between classes. In contrast to linear discriminant analysis, which has a long history of use in BCIs, SVMs select the hyperplane that maximizes distance from the nearest training points, which has been shown to increase the model's generalizability \ref{lotte + C. J. C. Burges. A tutorial on supp ort v ector mac hines for pattern recognition. Know le dge Disc overy and Data Mining , 2, 1998 } For SVM's applied to BCI: {D. Garrett, D. A. P eterson, C. W. Anderson, and M. H. Thaut. Comparison of linear, nonlinear, and feature selection methods for eeg signal classiffcation. IEEE T r ansactions on Neural System and Rehabilitation Engine ering , 11:141{144, 2003. A. Rak otomamonjy , V. Guigue, G. Mallet, and V. Alv arado. Ensemble of svms for impro ving brain computer in terface p300 sp eller p erformances. In International Confer enc e on A rticial Neur al Networks , 2005.}
 
-In this study, we use LinearSVC, a wrapper for Liblinear written in Python. \ref{liblinear,sk-learn} We chose LinearSVC primarily because its underlying C implementation is fast, and because linear kernels performed as well or better than nonlinear ones, corroborating the findings of previous studies. \ref{} We use the default settings for LinearSVC - a C of 1.0, squared hinge loss function, and a tolerance parameter of of 1e-4.
+In this study, we use LinearSVC, a wrapper for Liblinear exposed in Python through the scikit learn library. \ref{liblinear,sk-learn} We chose LinearSVC primarily because its underlying C implementation is very performant, and because linear kernels performed as well or better than nonlinear ones in early experimentation, corroborating the findings of previous studies. \ref{} We use the default settings for LinearSVC - a C of 1.0, squared hinge loss function, and a tolerance parameter of of 1e-4.
 
 
 ## Per-user calibration
 
-We conducted a calibration step for each participant. .........................explain the calibration task...................... We repeated this process at various recording lengths and at various bin sizes (enumerated in \fig{}).
-
-to simulate IRL we found the best-performing task-pair, but we also found the accuracy for every task pair we tried, which btw was all possible pairs of 2 tasks.
+We conducted a simulated calibration step for each participant. For each subject, we generated every possible pair of two tasks and cross-validated our SVM seven times on that subject's recordings for those two tasks. We used sk-learn's built-in cross-validation toolkit, which was configured to perform each of the seven cross-validation steps using different splits of trial data in the training and testing sets. For every task pair processed, we recorded mean classification across all cross-validation trials. We repeated this calibration process for all users at every combination of recording length and bin size. 
 
 
+% TODO: ALSO AT TESTING TIME!
+As an additional performance audit, we timed our SVM at training time. In order to establish a proper estimate, took two randomly selected subjects and two randomly selected task pairs, then fit an SVM to all data in those task pairs, and repeated this process ten thousand times. We report the minimum time of all trials. We time the SVM after all data has been loaded to memory, ignoring the time it takes to load the data from disk.
 
 
 # Results
+
+## Classification 
+
+
+
+{.........figure of best-case accuracy at different bin sizes and times............}
+
+
+We take particular interest in the accuracy of each subject's best-case task pair, as we predict this task pair would acheive the best discrimatory power.  We acheived excellent best-case performance overall, and maintained an estimated {x%} accuracy among {all [but x]} subjects, even at recording lengths of 1/2 second.
+
+Surprisingly, classification was better than chance even at a bin size of {x}, meaning that each feature vector in the training and testing sets contained only {x} features. {.........report a regression?.........}
+
+{.............figure of classification accuracy v. bin size...............}
+
+{.............report regression between classification accuracy and bin-size, length, subject, taskpair etc..............}
+
+
+## Performance
+
+{.....figure of performance v speed....}
+
+{....report regression between performance and speed.....}
+
+% TODO: A REGRESSION ON TEST TIME AS WELL!!!!!!!
+
+
+# Discussion
+
+We find that logarithmic binning dramatically decreases the computational expense of EEG-based calibration and classification without a signfiicant detriment to accuracy. 
+
+Logarithmic binning could enable co-adaptive, online BCI with as few as one dry EEG sensor, making online calibration much more performant on mobile or embedded processors with limited computational resources. Alternatively, since logarithmic dramatically decreases the size of data fed to the classification algorithm, the technique could allow calibration to occur "in the cloud" - the BCI could pre-process the data on board, bin it, and ship this data to a more powerful server, which could process it online. By some combination of cloud-based and on-board processing, BCIs could gain from the accuracy of computationally expensive analytics without having to perform these computations on-board.
+
+
+Future work:
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
