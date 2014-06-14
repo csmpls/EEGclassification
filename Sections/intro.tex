@@ -1,12 +1,18 @@
 \section{Introduction}
 
-Brain-computer interface systems aim to recognize a user's mental cues so that her intentions can be executed (or transmitted) electronically as symbols - a task that can be conceptualized as a pattern recognition problem []. Its difficulty stems from the non-stationary nature of mind. The mental representations we wish to classify are constantly changing. In order to compensate for the variability of the brain's signals, recent work has leveraged adaptive, machine learning approaches for classifying brainscan data, and early successes with this technique have yielded brain-controlled keyboards [hex-o-spell], wheelchairs [millan], and prosthetic arms and hands [tobi].
 
-However, these applications require large numbers of electrodes and high temporal resolution, creating dense and high-dimensional feature vectors. This makes classification a computationally expensive process.[] Classification bottlenecks threaten the responsiveness of BCI from a user experience standpoint, and complex scanning equipment places high requirements on end users and their hardware. 
+Brain-computer interface (BCI) systems establish a direct communcative link between the brain and an electronic system. \cite{dornhege_toward_2007,mcfarland_brain-computer_2011} While early systmes required 
+%TODO:blurb here????
+[[[ electrodes implanted in the user's s ]]], newer work has used non-invasive electroencephelographs (EEG) to build proof-of-concept BCI systems ranging from brain-controlled keyboards [hex-o-spell] and wheelchairs [millan] to prosthetic arms and hands [tobi] \cite{blankertz_note_2007,millan_combining_2010,d._mattia_brain_2011}
 
-Do BCI applications really require the dense electrode arrays and high scanning resolutions that studies have traditionally used? Is it possible to build a working BCI system with compressed feature vectors? In this study, we seek to examine fundamnetal tradeoffs between compression, classifier accuracy and online classifier performance for ``in-the-wild'' BCI systems. We use recordings from a single, dry eleectroencephalographic (EEG) electrode, and present a calibration tool that finds, for each user, the optimal compromise between classification accuracy and the computational expense of the classifier. By modelling how vector compression affects both the accuracy of the BCI system and the computational performance of the classifier, we hope to shed light on the optimal compromise between usability (accuracy and training time) and ease of deployment (computational expense and sensor resolution) in real-world BCI systems.
+There are a few reasons why these systems have not been widely deployed outside of lab settings. \cite{leeb_transferring_2013,hill_practical_2014} For one, they require large, complex scanning caps, which are impractical for disabled users and generally undesirable for ergonomic reasons. \cite{ekandem_evaluating_2012} Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (eg., smartphones, watches, embedded systems in scanning devices, etc). 
 
-``describe experiment and summarize results here!!!!!''
+For BCI systems to find wide adoption ``in the wild,'' they must calibrate to individual users quickly, acheive decent information transfer rates (ITR), and must run on mobile & wearable computing architectures. Since naturalistic environments will also introduce interference in the signal, they must also cope with lower signal quality than their lab-based counterparts and, for aesthetic and ergonomic reasons, must remain small, and ought not to require special placement or the application of gels. As a result, BCI systems must squeeze more information out of less raw data: they should approach in-lab metrics of efficacy with fewer and more comfortable sensors. 
+
+Can a small number of inexpensive, low-quality sensors acheive acceptable accuracy after a brief, online calibration phase? In this study, we use recordings from a single, dry electroencephalographic (EEG) sensor to interrogate the efficacy of a novel signal extraction technique based on the logarithmic binning of power spectra over time.
+
+ % TODO: To wit, we find...............................................................................................................................................................................................................................................
 
 
-
+\bibliographystyle{plain}
+\bibliography{references}

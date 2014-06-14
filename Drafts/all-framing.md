@@ -1,27 +1,3 @@
-Brain-computer interface (BCI) systems establish a direct communcative link between the brain and an electronic system. \ref{wolpow2002} While early systmes required [[[ electrodes implanted in the user's s ]]], newer work has used non-invasive electroencephelographs (EEG) to build proof-of-concept BCI systems ranging from brain-controlled keyboards [hex-o-spell] and wheelchairs [millan] to prosthetic arms and hands [tobi]. 
-
-There are a few reasons why these systems have not been widely deployed outside of lab settings. For one, they require large, complex scanning caps, which are impractical for disabled users and generally undesirable for ergonomic reasons. \ref{gotta be a good ergonomics ref no?} Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (eg., smartphones, watches, embedded systems in scanning devices, etc). \ref{gotta be a ref out there}
-
-For BCI systems to find wide adoption "in the wild," they must acheive acceptable information transfer rates (ITR) with fewer and more comfortable sensors. They must calibrate to individual users quickly, and must run on mobile & wearable computing architectures. Since naturalistic environments will also introduce interference in the signal, they must also cope with lower signal quality than their lab-based counterparts. 
-
-Can a small number of inexpensive, low-quality sensors acheive acceptable accuracy after a brief, online calibration phase? In this study, we use recordings from a single, dry electroencephalographic (EEG) sensor to interrogate the efficacy of a novel signal extraction technique based on the logarithmic binning of power spectra over time.
-
-To wit, we find...............................................................................................................................................................................................................................................
-
-## Brain-computer interface "in the wild"
-
-The wide adoption of BCI relies on two major streams of research: (i) the development of ergonomic sensors suitable for use in naturalitic settings and (ii) the ability to adapt lab-developed BCI strategies to the new constraints imposed by that these sensors. {........steal line on intro-ing consumer EEG devices.........}  Compared to their lab-based counerparts, ]these devices have many fewer electrodes, thus limited spatial resolution, and produce significantly noisier signals, as they do not use gels to conduct signal nor do they assume that electrodes are precisely placed on the scalp.
-
-Past work has demonstrated several mobile-ready BCI systems that use consumer-grade scanning devices. The Neurosky MindSet headset used in this study, employs a single, dry EEG electrode placed roughly at FP2, connects wirelessly to phones and computers, and sells for roughly 100USD. This headset has been used for cognitive load measurement, ERP detection and brain-based biometric authentication. \ref{lalalalalala} However, use of consumer EEGs for direct, real-time control of interfaces has been more tepid [swede who implemented snake; tepid wheelchair study]. 
-
-To transition direct BCI into naturalistic environments, we must squeeze more signal out of fewer, and less reliable, sensors. One sensor is a good start. We must also be mindful of the computing architectures on which these systems will most likely be deployed: since BCIs are envisioned largely as always-available input devices, they will require mobile processors and perhaps even embedded processing systems; our computational resources may be more similar to that of a smartphone than of a desktop workstation, and it is feasible that we may need to do some processing "in the cloud" (ie., on a more powerful server to which the client sends data over the network, similar to the way Apple's Siri processes voice data). 
-
-
-# Statistical signal processing in EEG-based BCI
-
-For the control of interface systems, it is crucial that mental gestures be actuated intentionally, and that the system's interpretation be immediately verifiable by the user. \ref{some bci thing, "neurohype"}. Toward this end, BCI systems generally aim to recognize a user's mental gestures as one of a finite set of discrete symbols, which can be thought of as a pattern recognition task \ref{lotte?whoever she cites?}. The difficulty of this task stems primarily from the variable and non-stationary nature of neural signals: the "symbols" we wish to identify are expressed differently between individuals, and even vary within individuals from trial to trial. \ref{}.
-
-In order to compensate for variability in BCI signals, recent work has leveraged adaptive classification algorithms to distinguish between mental gestures. {.........................steal lines intro-ing classification algos...................} {.................line explaining what a classifier is in terms of EEG and how we train one.......introduce the term "model" and how it applies here/why that term is relevant......................}
 
 
 ## Online co-adaptation 
@@ -34,6 +10,9 @@ From a technical standpoint, this calibration phase amounts to the training and 
 
 
 ## Co-adaptive BCI in naturalistic settings
+
+
+For the control of interface systems, it is crucial that mental gestures be actuated intentionally, and that the system's interpretation be immediately verifiable by the user. 
 
 this is where i dream a little..........just a little..........calibration and re-calibration is a part of the game.............happens whenever and is quick/well-supported........we can beam small amounst of data to a server, or do inexpensive processing on board if we are fast enough..............its the only way fwd..................................................
 

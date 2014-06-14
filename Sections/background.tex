@@ -1,12 +1,27 @@
 
-\section{Machine learning approaches in EEG-based BCI}
-Electroencephalography (EEG) is a popular mechanism for acheiving BCI, as its sensors are inexpensive, portable and non-invasive. However, EEG has limited spatial resolution, high variability between subjects and trials, and the ``dry'' electrodes suitable for everyday use yield poor signal quality. 
+\section{Brain-computer interface ``in the wild''}
+The wider adoption of BCI systems depends on two major streams of research: (i) the development of ergonomic sensors suitable for use in naturalitic settings and (ii) the ability to adapt lab-developed BCI strategies to the new constraints imposed by that these sensors.
 
-...it is important that the predictions of BCI systems be verifiable in real-time [lifshitz]
+% TODO: steal 1 sentence intro on consumer EEG devices
 
-\section{Performance challenges in online, adaptive BCI}
+Compared to their lab-based counerparts, ]these devices have many fewer electrodes, thus limited spatial resolution, and produce significantly noisier signals, as they do not use gels to conduct signal nor do they assume that electrodes are precisely placed on the scalp.
 
-\section{Compressing feature vectors for performant, online classification}
-speed is important at training as well as testing time.................decrease vector size==>increase
+% TODO: add more refs on this first sentence 
 
-Although many studies approached performance issues in online BCI systems,  few have systematically examined how BCI applications could leverage compression to increase the performance of ML-base classification.
+Past work has demonstrated several mobile-ready BCI systems that use inexpensive, consumer-grade scanning devices. \cite{campbell_neurophone:_2010} The Neurosky MindSet headset used in this study, employs a single, dry EEG electrode placed roughly at FP2, connects wirelessly to phones and computers, and sells for roughly 100USD. This headset has been used for detecting emotional states, ERPs, and for brain-based biometric authentication. \cite{crowley_evaluating_2010,grierson_better_2011,adams_i_2013} However, use of consumer EEGs for more ambitious applications - namely the direct, real-time control of software interfaces - has met more tepid success. \cite{carrino_self-paced_2012,larsen_classification_2011} 
+
+To transition direct BCI into naturalistic environments, we must squeeze more signal out of fewer, and less reliable, sensors. One sensor is a good start. We must also be mindful of the computing architectures on which these systems will most likely be deployed: since BCIs are envisioned largely as always-available input devices, they will require mobile processors and perhaps even embedded processing systems; our computational resources may be more similar to that of a smartphone than of a desktop workstation, and it is feasible that we may need to do some processing ``in the cloud'' (ie., on a more powerful server to which the client sends data over the network, similar to the way Apple's Siri processes voice data). 
+
+\section{Statistical signal processing in EEG-based BCI}
+
+For the control of interface systems, it is crucial that commands be issued intentionally, and that the system's interpretation of mental gestures be immediately verifiable by the user. \cite{millan_combining_2010,ali_empirical_2014}. Toward this end, BCI systems generally aim to recognize a user's mental gestures as one of a finite set of discrete symbols, which can be thought of as a pattern recognition task. \cite{lotte_review_2007} The difficulty of this task stems primarily from the variable and non-stationary nature of neural signals: the "symbols" we wish to identify are expressed differently between individuals, and even vary within individuals from trial to trial. \cite{vidaurre_fully_2006,vidaurre_machine-learning-based_2011} 
+
+In order to compensate for variability in BCI signals, recent work has leveraged adaptive classification algorithms to distinguish between mental gestures. 
+
+%steal lines intro-ing classification algos.....from my methods section
+%1 line explaining what a classifier is in terms of EEG and how we train one.......introduce the term "model" and how it applies here
+
+In classification algorithms generally, larger feature vectors neccesitate that an exponential increase in the amount of data needed to describe classes, a property known as ``the curse of dimensionality.'' \cite{jain_statistical_2000,raudys_small_1991} Traditionally, BCI applications rely on dense, high-diemsnional feature vectors produced by multi-electrode scanning caps with high temporal resolution, so dimensionality represents a major bottleneck in training classification algorithms. This bottleneck threatens the responsiveness of BCI from a user experience standpoint and places high requirements on end users' hardware.
+
+\bibliographystyle{plain}
+\bibliography{references}

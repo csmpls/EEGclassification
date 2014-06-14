@@ -1,0 +1,20 @@
+# Fdb version 3
+["pdflatex"] 1402783995 "/home/user/Documents/EEGclassification/EEGclassification.tex" "/home/user/Documents/EEGclassification/EEGclassification.pdf" "EEGclassification" 1402783995
+  "/etc/texmf/web2c/texmf.cnf" 1402783611 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/user/Documents/EEGclassification/EEGclassification.aux" 1402783995 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/user/Documents/EEGclassification/EEGclassification.tex" 1400712706 3057 14ce77db3205a3128feddb799d0150cd ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1254151887 20571 b8bd218bf2e18b4f5817ee643cd9c515 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1254151887 9042 248dfba326a1b8733d6bb8e0a3ac1e49 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/carlisle/remreset.sty" 1137109962 1096 6a75275ca00e32428c6f059d2f618ea7 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/oberdiek/aliascnt.sty" 1335995445 2511 8ef653ad0c83209793c35dc808929370 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty" 1312409015 26766 56c30c5bea3083b5a0d6fc2ce0063096 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1392645748 31083 1dfd8bf685ce0009c40532fedf8a7c53 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1392645748 31083 1dfd8bf685ce0009c40532fedf8a7c53 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1402783624 722335 34ba73525a5a5893e3be43f72ed0f401 ""
+  "EEGclassification.tex" 1400712706 3057 14ce77db3205a3128feddb799d0150cd ""
+  "llncs.cls" 1400712706 42849 e98f9316a296920ae82de0017d2b1604 ""
+  "nomencl.sty" 0 -1 0 ""
+  (generated)
+  "/home/user/Documents/EEGclassification/EEGclassification.pdf"
+  "EEGclassification.log"
+  "/home/user/Documents/EEGclassification/EEGclassification.log"
