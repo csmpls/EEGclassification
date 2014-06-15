@@ -1,18 +1,11 @@
 \section{Introduction}
 
 
-Brain-computer interface (BCI) systems establish a direct communcative link between the brain and an electronic system. \cite{dornhege_toward_2007,mcfarland_brain-computer_2011} While early systmes required 
-%TODO:blurb here????
-[[[ electrodes implanted in the user's s ]]], newer work has used non-invasive electroencephelographs (EEG) to build proof-of-concept BCI systems ranging from brain-controlled keyboards [hex-o-spell] and wheelchairs [millan] to prosthetic arms and hands [tobi] \cite{blankertz_note_2007,millan_combining_2010,d._mattia_brain_2011}
+Brain-computer interface (BCI) systems establish a direct communcative link between the brain and an electronic system. \cite{dornhege_toward_2007,mcfarland_brain-computer_2011} Recently, the combination of machine learning algorithms and non-invasive electroencephelographs (EEG) has yielded proof-of-concept systems ranging from brain-controlled keyboards and wheelchairs to prosthetic arms and hands \cite{blankertz_note_2007,millan_combining_2010,d._mattia_brain_2011,hill_practical_2014,campbell_neurophone:_2010}
+% TODO: more sites on cool EEG applications?
 
-There are a few reasons why these systems have not been widely deployed outside of lab settings. \cite{leeb_transferring_2013,hill_practical_2014} For one, they require large, complex scanning caps, which are impractical for disabled users and generally undesirable for ergonomic reasons. \cite{ekandem_evaluating_2012} Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (eg., smartphones, watches, embedded systems in scanning devices, etc). 
+There are a few reasons why these systems have not been widely deployed outside of lab settings. For one, they require large, complex scanning caps, which are impractical for disabled users and generally undesirable for ergonomic reasons. \cite{ekandem_evaluating_2012,leeb_transferring_2013} Meanwhile, the data these caps produce is large, which could be computationally unwieldy on the mobile computing environments in which these systems will most likely be deployed (eg., smartphones, watches, embedded systems in scanning devices, etc). 
 
-For BCI systems to find wide adoption ``in the wild,'' they must calibrate to individual users quickly, acheive decent information transfer rates (ITR), and must run on mobile & wearable computing architectures. Since naturalistic environments will also introduce interference in the signal, they must also cope with lower signal quality than their lab-based counterparts and, for aesthetic and ergonomic reasons, must remain small, and ought not to require special placement or the application of gels. As a result, BCI systems must squeeze more information out of less raw data: they should approach in-lab metrics of efficacy with fewer and more comfortable sensors. 
+For BCI systems to enjoy wider adoption ``in the wild,'' squeeze more information out of less raw data: they must calibrate to individual users quickly and acheive decent information transfer rates (ITR), but with fewer sensors, and more noise in the signal. As an added challenge, their computational firepower may be limited by the mobile \& wearable computing architectures on which they will must likely be deployed.
 
-Can a small number of inexpensive, low-quality sensors acheive acceptable accuracy after a brief, online calibration phase? In this study, we use recordings from a single, dry electroencephalographic (EEG) sensor to interrogate the efficacy of a novel signal extraction technique based on the logarithmic binning of power spectra over time.
-
- % TODO: To wit, we find...............................................................................................................................................................................................................................................
-
-
-\bibliographystyle{plain}
-\bibliography{references}
+Do we really need dense, high-dimensional EEG data to acheive acceptable accuracy? In this study, we use recordings from a single, dry electroencephalographic (EEG) sensor to interrogate the efficacy of a signal extraction technique based on the logarithmic binning of power spectra over time. To wit, we find that this technique significantly increases the calibration speed without a significant detriment to classification accuracy. Furthermore, it greatly decreases the size of feature vectors, making them easier to store in memory or to transmit through the web.

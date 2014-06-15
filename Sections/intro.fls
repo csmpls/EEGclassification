@@ -1,0 +1,10 @@
+PWD /home/user/Documents/EEGclassification/Sections
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/user/Documents/EEGclassification/Sections/intro.tex
+OUTPUT /home/user/Documents/EEGclassification/Sections/intro.log
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /home/user/Documents/EEGclassification/Sections/intro.bbl
+INPUT /home/user/Documents/EEGclassification/Sections/intro.bbl

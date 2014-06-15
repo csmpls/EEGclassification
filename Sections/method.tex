@@ -1,7 +1,18 @@
 \section{Method}
 
+Our research involved human subjects, and our experimental procedures were approved by an Institutional Review Board. We recruited 15 subjects to participate in our study, all of whom were UC Berkeley undergraduate or graduate students, Each subject met with investigators in a quiet, closed room for two 40-50 minute sessions on two separate days. We briefed subjects on the objective of the study, fitted them with a Neurosky MindSet heatset, and provided instructions for completing each task. As the subjects performed each task, we recorded readings from the headset.
 
-\subsection{Preparing the right input for the classifier}
+\subsection{Tasks}
+
+% TODO: steal from passthoguhts
+
+\subsection{Signal extraction}
+
+Before analyzing the data, we compute the power spectrum data using a fast fourier transform. We then compress the data in the temporal dimension, taking the middle \textit{n} seconds of the recording, where \textit{n} is {0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9}. 
+
+%TODO: publishable-ify stuff below
+
+%---------------
 
 Following your questions on how I generated the input for the classifier from Benjamin's raw data, I could recall what input I prepared. It's quite simple and robust, and now I see better why it seems to classify quite well, maybe better that other methods.
 
@@ -13,13 +24,13 @@ For each bin of 1/4 Hz, we can compute a median value out of the n power spectra
 
 However, for a classifier, it is desirable to have less values (i.e., of the order of 10 to 100). But we don't want to lose information on the whole pdf. Binning the pdf is a simple way to "compress" the information contained. The basic idea is to take the median of several bins. For instance, four contiguous bins (1-1.25,1.25-1.5,1.5-1.75,1.75-2) have the values (4,4,5,5) the value resulting from combining these values into one bin would be 4.5. The pdf is heavy-tailed and it is desirable to arrange the "compression" bins in a way it provides relevant information on the whole distribution. One way to do this efficiently is to arrange the compression bins in a logarithmic fashion.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=5in]{Figures/binned_EEGpowerspectrum.png}
-\caption{ }
-\label{binnedEEGpowerspec}
-\end{center}
-\end{figure}
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=5in]{Figures/binned_EEGpowerspectrum.png}
+% \caption{Binned power spectrum}
+% \label{binnedEEGpowerspec}
+% \end{center}
+% \end{figure}
 
 Figure \ref{binnedEEGpowerspec} shows, in double logarithmic scale, the original 1024 bins (blue dots) of the pdf obtained from averaging the n power spectra of one sample, and the resulting "compressed"  pdf with 100 log-bins. As we can see, the log-binning preserves very well the structure of the pdf.
 
@@ -29,12 +40,24 @@ In summary, we have built a probability density function of brain frequencies as
 
 {\bf Side note:} one way to investigate further would be to see indeed to what extent the "compression", i.e. the small number of log-bins, affects the quality of the classifier. Another quite promising further research direction, would be to determine the minimum number of n power spectra, which should be taken into account to reach a target level of correct classification. This would be useful to determine what should be the most adequate sample size for a certain level of identification. This level might of course vary as a function of subjects and tasks.
 
+%-----------
+
+Finally, we create a one-dimensional signal by flattening each bin in the time dimension, computing the mean magnitude of each bin over all readings in the recording. The resulting signal is a one-dimensional row vector with one entry for each each measured frequncy bin.
+
 
 \subsection{Classifier}
 
-\begin{itemize}
-  \item linearSVC uses a [linear kernel](\url{http://en.wikipedia.org/wiki/Support_vector_machine#Linear_SVM}) as opposed to a nonlinear kernel. i used it because nonlinear kernels did as well or worse, and took *much* longer. LinearSVC works the same as the SVC i was using last time around (which also had a linear kernel), it's just more performant because it's in C
-  \item 
-  \item 
-\end{itemize}
+Support vector machines (SVM) are a set of supervised machine learning methods that take labeled example data to create a model that can be used to predict the classes of unlabeled data. SVMs use a hyperplane (an n-dimensional construct in n+1 dimensional space) to draw discriminatory boundaries between classes. In contrast to linear discriminant analysis, which has a long history of use in BCIs, SVMs select the hyperplane that maximizes distance from the nearest training points, which has been shown to increase the model's generalizability. \cite{burges_tutorial_1998} For SVM's applied to BCI: \cite{garrett_comparison_2003,garrett_comparison_2003,grierson_better_2011} 
+
+In this study, we use LinearSVC, \cite{fan_liblinear:_2008} a wrapper for Liblinear exposed in Python through the scikit learn library. \cite{pedregosa_scikit-learn:_2011} We chose LinearSVC primarily because its underlying C implementation is very performant, and because linear kernels performed as well or better than nonlinear ones in early experimentation, corroborating the findings of previous studies. \cite{garrett_comparison_2003,lotte_review_2007} We use the default settings for LinearSVC - a C of 1.0, squared hinge loss function, and a tolerance parameter of of 1e-4.
+
+
+\subsection{Per-user calibration}
+
+We conducted a simulated calibration step for each participant. For each subject, we generated every possible pair of two tasks and cross-validated our SVM seven times on that subject's recordings for those two tasks. We used sk-learn's built-in cross-validation toolkit, which was configured to perform each of the seven cross-validation steps using different splits of trial data in the training and testing sets. For every task pair processed, we recorded mean classification across all cross-validation trials. We repeated this calibration process for all users at every combination of recording length and bin size. 
+
+
+As an additional performance audit, we timed our SVM at training time. In order to establish a proper estimate, took two randomly selected subjects and two randomly selected task pairs, then fit an SVM to all data in those task pairs, and repeated this process ten thousand times. We report the minimum time of all trials. We time the SVM after all data has been loaded to memory, ignoring the time it takes to load the data from disk.
+
+% TODO: we should test at test-time also?
 

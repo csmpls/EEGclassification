@@ -4,7 +4,7 @@ The wider adoption of BCI systems depends on two major streams of research: (i) 
 
 % TODO: steal 1 sentence intro on consumer EEG devices
 
-Compared to their lab-based counerparts, ]these devices have many fewer electrodes, thus limited spatial resolution, and produce significantly noisier signals, as they do not use gels to conduct signal nor do they assume that electrodes are precisely placed on the scalp.
+Compared to their lab-based counerparts, these devices have many fewer electrodes, thus limited spatial resolution, and produce significantly noisier signals, as they do not use gels to conduct signal nor do they assume that electrodes are precisely placed on the scalp.
 
 % TODO: add more refs on this first sentence 
 
@@ -16,12 +16,28 @@ To transition direct BCI into naturalistic environments, we must squeeze more si
 
 For the control of interface systems, it is crucial that commands be issued intentionally, and that the system's interpretation of mental gestures be immediately verifiable by the user. \cite{millan_combining_2010,ali_empirical_2014}. Toward this end, BCI systems generally aim to recognize a user's mental gestures as one of a finite set of discrete symbols, which can be thought of as a pattern recognition task. \cite{lotte_review_2007} The difficulty of this task stems primarily from the variable and non-stationary nature of neural signals: the "symbols" we wish to identify are expressed differently between individuals, and even vary within individuals from trial to trial. \cite{vidaurre_fully_2006,vidaurre_machine-learning-based_2011} 
 
-In order to compensate for variability in BCI signals, recent work has leveraged adaptive classification algorithms to distinguish between mental gestures. 
+In order to compensate for variability in BCI signals, recent work has leveraged adaptive classification algorithms to distinguish between mental gestures. \cite{lotte_review_2007,vidaurre_machine-learning-based_2011} 
 
 %steal lines intro-ing classification algos.....from my methods section
 %1 line explaining what a classifier is in terms of EEG and how we train one.......introduce the term "model" and how it applies here
 
 In classification algorithms generally, larger feature vectors neccesitate that an exponential increase in the amount of data needed to describe classes, a property known as ``the curse of dimensionality.'' \cite{jain_statistical_2000,raudys_small_1991} Traditionally, BCI applications rely on dense, high-diemsnional feature vectors produced by multi-electrode scanning caps with high temporal resolution, so dimensionality represents a major bottleneck in training classification algorithms. This bottleneck threatens the responsiveness of BCI from a user experience standpoint and places high requirements on end users' hardware.
 
-\bibliographystyle{plain}
-\bibliography{references}
+\section{Online, co-adaptive calibration}
+
+Coming to control a BCI system requires more than adaptive algorithms. Shenoy et al (2006) frame BCI learning as a cooperation between two adaptive systems: the BCI's algorithms and the human user. \cite{shenoy_towards_2006} By building interfaces in which the user and the BCI ``co-adapt'' during an interactive calibration step, past work has turned BCI novices into competent users over the course of hours instead of days or weeks, and without manual calibration by a researcher. \cite{vidaurre_fully_2006,vidaurre_co-adaptive_2011,vidaurre_machine-learning-based_2011}
+
+Past work on co-adaptive BCI has used a several-step approach in which the system feeds preprocessed data to an adaptive classifier, which uses new and past data to optimize and recalculate itself, either during intermittant, offline steps or continuously online. \cite{vidaurre_fully_2006,shijian_lu_unsupervised_2009,das_unsupervised_2013} During calibration, users perform ``labeled'' (that is, known) mental gestures in order to produce samples for the classifier. Meanwhile, the classifier performs various experiments in which it attempts to establish which features of the data are most informative. Systems may generate multiple models in parallel and combine their decisions democratically (an ``ensemble approach''). After several calibration steps, the system is able to estimate the user's control by assessing its model's accuracy on samples it has already recorded.
+
+\section{Co-adaptive BCI in naturalistic settings}
+
+For the control of interface systems, it is crucial that mental gestures be actuated intentionally, and that the system's interpretation be immediately verifiable by the user. \cite{mcfarland_brain-computer_2011,ali_empirical_2014}
+
+% TODO: some line abt how we need it to be fast........for responsiveness.....
+
+Efficient calibration is particularly crucial for real-world use, as most preliminary studies indicate that, due to the nonstationary nature of EEG signals, regular calibration and re-calibration will be a necessary component of BCI systems well into the foreseeable future. From a technical standpoint, this calibration phase amounts to the training and re-training of one or several adaptive algorithms. Calibration can be processing-intensive work, especially when the system is computing multiple candidate models. This requires a great deal of online signal processing, which entails not only the computational time required to train the classifier, but also the space required to handle the data and the time required to read and write the data from memory or from disk. 
+
+% drop another hint about embedded sensors and doing stuff in the cloud
+
+
+
