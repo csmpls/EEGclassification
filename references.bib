@@ -1,0 +1,469 @@
+
+@article{vidaurre_fully_2006,
+	title = {A Fully On-Line Adaptive {BCI}},
+	volume = {53},
+	issn = {0018-9294},
+	url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1634519},
+	doi = {10.1109/TBME.2006.873542},
+	number = {6},
+	urldate = {2014-02-11},
+	journal = {{IEEE} Transactions on Biomedical Engineering},
+	author = {Vidaurre, C. and Schloogl, A. and Cabeza, R. and Scherer, R. and Pfurtscheller, G.},
+	month = jun,
+	year = {2006},
+	pages = {1214--1219},
+	annote = {
+
+
+As a con- sequence of the design of this {BCI}, training sessions without feedback are not needed and the subject can find a strategy based only on the response of the system. 
+
+
+},
+	file = {Vidaurre 2006.pdf:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/3XTN9WIM/Vidaurre 2006.pdf:application/pdf;Vidaurre 2009 (skim for UI).pdf:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/Q6DG34CM/Vidaurre 2009 (skim for UI).pdf:application/pdf}
+}
+
+@article{vidaurre_machine-learning-based_2011,
+	title = {Machine-Learning-Based Coadaptive Calibration for Brain-Computer Interfaces},
+	volume = {23},
+	issn = {0899-7667, 1530-{888X}},
+	url = {http://www.mitpressjournals.org/doi/abs/10.1162/NECO_a_00089},
+	doi = {10.1162/NECO_a_00089},
+	number = {3},
+	urldate = {2014-02-10},
+	journal = {Neural Computation},
+	author = {Vidaurre, Carmen and Sannelli, Claudia and Müller, Klaus-Robert and Blankertz, Benjamin},
+	month = mar,
+	year = {2011},
+	pages = {791--816},
+	annote = {bib in this is {VERY} {RICH}
+ },
+	annote = {this is great work on the algorithmic side - but what about usability? can we improve calibration outcomes by giving user step-by-step insight into the classification process? },
+	annote = {traditionally non-invasive {BCI} requires manual screening and calibration (cincotii 2008 non-invasive {BCI} assistive). inconvenient and may lead to observed {'BCI} illiteracy'. this paper approaches cures someone of {BCI} illiteracy (among other generally good results) by making all classifier training online - starts as a 'subject independent classifier' and 'evolves' into a 'subject-optimized state-of-the-art classifier in one session while the user interacts continuously.' 
+ 
+runs 1-3: subject-independent binary linear classifier.  
+ 
+use 1-3 to generate subject-specific bandpass
+ 
+runs 4-6: subject-dependent -- "feedback with optimized features provided to the user".  use {CSP} for differentiation. every turn, finds a new selection laplacian channels for optimal classification (spatial adaptation)
+ 
+runs 7-8: {UNsupervised} {NOT} adaptive to track {IRL} performance
+ 
+(using {LDAs} to reduce dimensionality given added training data, as we need to calculate before next trial starts - brilliant)}
+}
+
+@article{blankertz_berlin_????,
+	title = {The Berlin brain-computer interface: Report from the feedback sessions},
+	author = {Blankertz, Benjamin and Dornhege, Guido and Krauledat, Matthias and Müller, Klaus-Robert and Curio, Gabriel},
+	annote = {
+
+
+ 35 bits per minute (bpm) and as little as 30 min of calibration/training, 
+
+
+}
+}
+
+@article{shenoy_towards_2006,
+	title = {Towards adaptive classification for {BCI}},
+	volume = {3},
+	issn = {1741-2560, 1741-2552},
+	url = {http://stacks.iop.org/1741-2552/3/i=1/a=R02?key=crossref.e9370dacabfaf8f0154bc076747ae38c},
+	doi = {10.1088/1741-2560/3/1/R02},
+	number = {1},
+	urldate = {2014-02-11},
+	journal = {Journal of Neural Engineering},
+	author = {Shenoy, Pradeep and Krauledat, Matthias and Blankertz, Benjamin and Rao, Rajesh P N and Müller, Klaus-Robert},
+	month = mar,
+	year = {2006},
+	pages = {R13--R23},
+	annote = {
+
+
+systematic evidence of statistical differences in data recorded during offline and online sessions. 
+ 
+
+
+},
+	annote = {
+
+
+we observed in several cases that the performance can be enhanced by manually adjusting some parameters of the translation algorithm, such as bias or scaling of the classifier output. Further, during online sessions, subjects report phases where the accuracy of {BCI} control is degraded. 
+
+
+},
+	file = {shenoy 2006.pdf:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/G63XH8XM/shenoy 2006.pdf:application/pdf}
+}
+
+@article{lotte_review_2007,
+	title = {A review of classification algorithms for {EEG-based} brain–computer interfaces},
+	volume = {4},
+	journal = {Journal of neural engineering},
+	author = {Lotte, Fabien and Congedo, Marco and Lécuyer, Anatole and Lamarche, Fabrice and Arnaldi, Bruno and others},
+	year = {2007},
+	keywords = {{CANONICAL}}
+}
+
+@article{vidaurre_co-adaptive_2011,
+	title = {Co-adaptive calibration to improve {BCI} efficiency},
+	volume = {8},
+	issn = {1741-2560, 1741-2552},
+	url = {http://stacks.iop.org/1741-2552/8/i=2/a=025009?key=crossref.e66f0904facbdfa5bd85770ab85085e4},
+	doi = {10.1088/1741-2560/8/2/025009},
+	number = {2},
+	urldate = {2014-02-10},
+	journal = {Journal of Neural Engineering},
+	author = {Vidaurre, Carmen and Sannelli, Claudia and Müller, Klaus-Robert and Blankertz, Benjamin},
+	month = apr,
+	year = {2011},
+	pages = {025009},
+	annote = {From our results, at least half of the users who suffered from the inefficiency of the {BCI} systems can now perform {BCI} experiments with a good level of control, and this within just 15 min. The question remains whether operant conditioning or further sessions of co-adaptive calibration can provide {BCI} control to those users who continue without significant control after this study. },
+	annote = {
+
+
+replaces the offline calibration by a ‘co-adaptive calibration’, in which the mental strategy of the user and the algorithm of the {BCI} system are jointly optimized. This approach leads completely novices users to achieve control of the system in just one session (and in the first minutes of operation). In addition, at least half of the category {III} users, who could not gain {BCI} control in the classic machine learning approach, could achieve control after 15 min of feedback (after the first run), thus reducing the percentage of users unable to communicate using {SMR-based} {BCI} systems from 25\% to 12.5\%. [..] 10 users out of 14 significantly improved their performance between the first and last run. 
+
+
+
+ 
+
+
+
+ 
+
+
+},
+	annote = {
+
+
+Users exhibit a different mental state during offline calibration and online feedback (cf [22]), which renders the classifier that is optimized on the data of the calibration suboptimal and sometimes even non-functional for feedback 
+
+
+},
+	file = {vidaurre 2011.pdf:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/3EAKDBR8/vidaurre 2011.pdf:application/pdf}
+}
+
+@article{shijian_lu_unsupervised_2009,
+	title = {Unsupervised Brain Computer Interface Based on Intersubject Information and Online Adaptation},
+	volume = {17},
+	issn = {1534-4320, 1558-0210},
+	url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4785192},
+	doi = {10.1109/TNSRE.2009.2015197},
+	number = {2},
+	urldate = {2014-02-11},
+	journal = {{IEEE} Transactions on Neural Systems and Rehabilitation Engineering},
+	author = {Shijian Lu and Cuntai Guan and Haihong Zhang},
+	month = apr,
+	year = {2009},
+	pages = {135--145}
+}
+
+@book{larsen_classification_2011,
+	title = {Classification of {EEG} Signals in a Brain- Computer Interface System},
+	abstract = {This assignment should include both a theoretical and a practical part. In the theoretical part, current Brain-Computer Interface systems and methods should be researched, to create a state-of-the-art overview of, and to learn about the domain. The focus should be on the emergent commercialization of {EEG} products on the public market. In this project, a {NeuroSky} mindset ({EEG} equipment) is available as a test device. The practical part should implement a system consisting of three modules. The first module should communicate with the {NeuroSky} mindset and get {EEG} signals, the second module should process those signals and make input parameters for the third module, which should be a game that have one or several features controlled by the input parameters. The goal is 1) that users should be able to control a game using their minds, and 2) investigate if low price {EEG} equipment enables that.},
+	author = {Larsen, Erik Andreas and Hokl, Co-supervisor Jørn},
+	year = {2011},
+	file = {Citeseer - Full Text PDF:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/3NG7XDXW/Larsen and Hokl - 2011 - Classification of EEG Signals in a Brain- Computer.pdf:application/pdf;Citeseer - Snapshot:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/EM3DUE42/summary.html:text/html}
+}
+
+@article{hill_practical_2014,
+	title = {A practical, intuitive brain–computer interface for communicating ‘yes’ or ‘no’ by listening},
+	volume = {11},
+	issn = {1741-2560, 1741-2552},
+	url = {http://stacks.iop.org/1741-2552/11/i=3/a=035003?key=crossref.48667725cf4a5040fabf37774838e21b},
+	doi = {10.1088/1741-2560/11/3/035003},
+	number = {3},
+	urldate = {2014-05-23},
+	journal = {Journal of Neural Engineering},
+	author = {Hill, N Jeremy and Ricci, Erin and Haider, Sameah and McCane, Lynn M and Heckman, Susan and Wolpaw, Jonathan R and Vaughan, Theresa M},
+	month = jun,
+	year = {2014},
+	pages = {035003}
+}
+
+@article{leeb_transferring_2013,
+	series = {Special Issue: Brain-computer interfacing},
+	title = {Transferring brain–computer interfaces beyond the laboratory: Successful application control for motor-disabled users},
+	volume = {59},
+	issn = {0933-3657},
+	shorttitle = {Transferring brain–computer interfaces beyond the laboratory},
+	url = {http://www.sciencedirect.com/science/article/pii/S0933365713001218},
+	doi = {10.1016/j.artmed.2013.08.004},
+	abstract = {{AbstractObjectives}
+Brain–computer interfaces ({BCIs)} are no longer only used by healthy participants under controlled conditions in laboratory environments, but also by patients and end-users, controlling applications in their homes or clinics, without the {BCI} experts around. But are the technology and the field mature enough for this? Especially the successful operation of applications – like text entry systems or assistive mobility devices such as tele-presence robots – requires a good level of {BCI} control. How much training is needed to achieve such a level? Is it possible to train naïve end-users in 10 days to successfully control such applications?
+Materials and methods
+In this work, we report our experiences of training 24 motor-disabled participants at rehabilitation clinics or at the end-users’ homes, without {BCI} experts present. We also share the lessons that we have learned through transferring {BCI} technologies from the lab to the user's home or clinics.
+Results
+The most important outcome is that 50\% of the participants achieved good {BCI} performance and could successfully control the applications (tele-presence robot and text-entry system). In the case of the tele-presence robot the participants achieved an average performance ratio of 0.87 (max. 0.97) and for the text entry application a mean of 0.93 (max. 1.0). The lessons learned and the gathered user feedback range from pure {BCI} problems (technical and handling), to common communication issues among the different people involved, and issues encountered while controlling the applications.
+Conclusion
+The points raised in this paper are very widely applicable and we anticipate that they might be faced similarly by other groups, if they move on to bringing the {BCI} technology to the end-user, to home environments and towards application prototype control.},
+	number = {2},
+	urldate = {2014-06-11},
+	journal = {Artificial Intelligence in Medicine},
+	author = {Leeb, Robert and Perdikis, Serafeim and Tonin, Luca and Biasiucci, Andrea and Tavella, Michele and Creatura, Marco and Molina, Alberto and Al-Khodairy, Abdul and Carlson, Tom and Millán, José d. R.},
+	month = oct,
+	year = {2013},
+	keywords = {Application control, Brain–computer interface ({BCI)}, Electroencephalogram ({EEG)}, End-user, motor imagery, Technology transfer},
+	pages = {121--132},
+	file = {ScienceDirect Full Text PDF:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/4RDTZ5SV/Leeb et al. - 2013 - Transferring brain–computer interfaces beyond the .pdf:application/pdf;ScienceDirect Snapshot:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/HVUHV3QJ/S0933365713001218.html:text/html}
+}
+
+@article{mcfarland_brain-computer_2011,
+	title = {Brain-Computer Interfaces for Communication and Control},
+	volume = {54},
+	issn = {0001-0782},
+	doi = {10.1145/1941487.1941506},
+	language = {{ENG}},
+	number = {5},
+	journal = {Commun {ACM}},
+	author = {McFarland, Dennis J and Wolpaw, Jonathan R},
+	year = {2011},
+	pmid = {21984822},
+	pmcid = {PMC3188401},
+	pages = {60--66}
+}
+
+@book{dornhege_toward_2007,
+	title = {Toward Brain-computer Interfacing},
+	isbn = {9780262042444},
+	abstract = {Interest in developing an effective communication interface connecting the human brain and a computer has grown rapidly over the past decade. The brain-computer interface ({BCI)} would allow humans to operate computers, wheelchairs, prostheses, and other devices, using brain signals only. {BCI} research may someday provide a communication channel for patients with severe physical disabilities but intact cognitive functions, a working tool in computational neuroscience that contributes to a better understanding of the brain, and a novel independent interface for human-machine communication that offers new options for monitoring and control. This volume presents a timely overview of the latest {BCI} research, with contributions from many of the important research groups in the field. The book covers a broad range of topics, describing work on both noninvasive (that is, without the implantation of electrodes) and invasive approaches. Other chapters discuss relevant techniques from machine learning and signal processing, existing software for {BCI}, and possible applications of {BCI} research in the real world.},
+	language = {en},
+	publisher = {{MIT} Press},
+	author = {Dornhege, Guido},
+	year = {2007},
+	keywords = {Computers / Neural Networks, Medical / Neuroscience}
+}
+
+@inproceedings{carrino_self-paced_2012,
+	title = {A self-paced {BCI} system to control an electric wheelchair: Evaluation of a commercial, low-cost {EEG} device},
+	shorttitle = {A self-paced {BCI} system to control an electric wheelchair},
+	doi = {10.1109/BRC.2012.6222185},
+	abstract = {The electrical cerebral activity has been already used in several applications aiming at improving the daily life of impaired people with strong motor disabilities. In particular the Electroencephalogram signals ({EEG)} have been used to provide new ways for communication and control. However, such kind of technology presents some important drawbacks such as the price and the difficulty to prepare the system without an expert's support. This work intends to build a user-friendly, self-paced Brain-Computer Interface ({BCI)} system that allows using commercial {EEG} headsets in order to drive an electrical wheelchair with a motor imagery approach. Furthermore, the conceived system has been used for a first evaluation of a commercial, low-cost, {EEG} device compared with data coming from a professional device. The result shows that the low cost {EEG} device, at the actual state of the art, provide interesting results but can hardly be used for self-paced systems in error sensitive context.},
+	booktitle = {Biosignals and Biorobotics Conference ({BRC)}, 2012 {ISSNIP}},
+	author = {Carrino, F. and Dumoulin, J. and Mugellini, E. and Khaled, O.A. and Ingold, R.},
+	month = jan,
+	year = {2012},
+	keywords = {biomedical equipment, brain computer interface, brain-computer interface, Brain-Computer Interfaces, Context, {EEG}, electrical cerebral activity, electric vehicles, electric wheelchair control, electrodes, electroencephalogram, Electroencephalography, handicapped aids, Headphones, Human computer interaction, medical control systems, motor imagery, Performance evaluation, self-paced {BCI} system, Sensors, Wearable sensors, wheelchairs},
+	pages = {1--6},
+	file = {IEEE Xplore Abstract Record:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/ZIC69KSV/login.html:text/html}
+}
+
+@article{millan_combining_2010,
+	title = {Combining Brain-Computer Interfaces and Assistive Technologies: State-of-the-Art and Challenges},
+	volume = {4},
+	issn = {1662-{453X}},
+	shorttitle = {Combining Brain-Computer Interfaces and Assistive Technologies},
+	doi = {10.3389/fnins.2010.00161},
+	abstract = {In recent years, new research has brought the field of electroencephalogram ({EEG)-based} brain-computer interfacing ({BCI)} out of its infancy and into a phase of relative maturity through many demonstrated prototypes such as brain-controlled wheelchairs, keyboards, and computer games. With this proof-of-concept phase in the past, the time is now ripe to focus on the development of practical {BCI} technologies that can be brought out of the lab and into real-world applications. In particular, we focus on the prospect of improving the lives of countless disabled individuals through a combination of {BCI} technology with existing assistive technologies ({AT).} In pursuit of more practical {BCIs} for use outside of the lab, in this paper, we identify four application areas where disabled individuals could greatly benefit from advancements in {BCI} technology, namely, {"Communication} and Control", {"Motor} Substitution", {"Entertainment"}, and {"Motor} Recovery". We review the current state of the art and possible future developments, while discussing the main research issues in these four areas. In particular, we expect the most progress in the development of technologies such as hybrid {BCI} architectures, user-machine adaptation algorithms, the exploitation of users' mental states for {BCI} reliability and confidence measures, the incorporation of principles in human-computer interaction ({HCI)} to improve {BCI} usability, and the development of novel {BCI} technology including better {EEG} devices.},
+	language = {eng},
+	journal = {Front Neurosci},
+	author = {Millán, J D R and Rupp, R and Müller-Putz, G R and Murray-Smith, R and Giugliemma, C and Tangermann, M and Vidaurre, C and Cincotti, F and Kübler, A and Leeb, R and Neuper, C and Müller, K-R and Mattia, D},
+	year = {2010},
+	pmid = {20877434},
+	pmcid = {PMC2944670}
+}
+
+@incollection{blankertz_note_2007,
+	series = {Lecture Notes in Computer Science},
+	title = {A Note on Brain Actuated Spelling with the Berlin Brain-Computer Interface},
+	copyright = {©2007 Springer-Verlag Berlin Heidelberg},
+	isbn = {978-3-540-73280-8, 978-3-540-73281-5},
+	url = {http://link.springer.com/chapter/10.1007/978-3-540-73281-5_83},
+	abstract = {Brain-Computer Interfaces ({BCIs)} are systems capable of decoding neural activity in real time, thereby allowing a computer application to be directly controlled by the brain. Since the characteristics of such direct brain-to-computer interaction are limited in several aspects, one major challenge in {BCI} research is intelligent front-end design. Here we present the mental text entry application {‘Hex-o-Spell’} which incorporates principles of Human-Computer Interaction research into {BCI} feedback design. The system utilises the high visual display bandwidth to help compensate for the extremely limited control bandwidth which operates with only two mental states, where the timing of the state changes encodes most of the information. The display is visually appealing, and control is robust. The effectiveness and robustness of the interface was demonstrated at the {CeBIT} 2006 (world’s largest {IT} fair) where two subjects operated the mental text entry system at a speed of up to 7.6 char/min.},
+	number = {4555},
+	urldate = {2014-06-11},
+	booktitle = {Universal Access in Human-Computer Interaction. Ambient Interaction},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Blankertz, Benjamin and Krauledat, Matthias and Dornhege, Guido and Williamson, John and Murray-Smith, Roderick and Müller, Klaus-Robert},
+	editor = {Stephanidis, Constantine},
+	month = jan,
+	year = {2007},
+	keywords = {Computer Communication Networks, Information Storage and Retrieval, Logics and Meanings of Programs, Multimedia Information Systems, Software Engineering, User Interfaces and Human Computer Interaction},
+	pages = {759--768},
+	file = {Full Text PDF:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/ITSWJGND/Blankertz et al. - 2007 - A Note on Brain Actuated Spelling with the Berlin .pdf:application/pdf;Snapshot:/home/user/.zotero/zotero/ris4p438.default/zotero/storage/224NSGPQ/978-3-540-73281-5_83.html:text/html}
+}
+
+@article{pedregosa_scikit-learn:_2011,
+	title = {Scikit-learn: Machine Learning in Python},
+	volume = {12},
+	issn = {1532-4435},
+	url = {http://dl.acm.org/citation.cfm?id=1953048.2078195},
+	journal = {J. Mach. Learn. Res.},
+	author = {Pedregosa, Fabian and Varoquaux, Gaël and Gramfort, Alexandre and Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and Vanderplas, Jake and Passos, Alexandre and Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and Duchesnay, Édouard},
+	month = nov,
+	year = {2011},
+	pages = {2825–2830}
+}
+
+@incollection{adams_i_2013,
+	series = {Lecture Notes in Computer Science},
+	title = {I Think, Therefore I Am: Usability and Security of Authentication Using Brainwaves},
+	volume = {7862},
+	isbn = {978-3-642-41319-3},
+	url = {http://dx.doi.org/10.1007/978-3-642-41320-9_1},
+	booktitle = {Financial Cryptography and Data Security},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Chuang, John and Nguyen, Hamilton and Wang, Charles and Johnson, Benjamin},
+	editor = {Adams, AndrewA. and Brenner, Michael and Smith, Matthew},
+	year = {2013},
+	keywords = {authentication, {EEG}, pass-thoughts, usability},
+	pages = {1--16}
+}
+
+@article{garrett_comparison_2003,
+	title = {Comparison of linear, nonlinear, and feature selection methods for eeg signal classification},
+	volume = {11},
+	issn = {1534-4320},
+	url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1214704},
+	doi = {10.1109/TNSRE.2003.814441},
+	language = {en},
+	number = {2},
+	urldate = {2014-06-14},
+	journal = {{IEEE} Transactions on Neural Systems and Rehabilitation Engineering},
+	author = {Garrett, D. and Peterson, D.A. and Anderson, C.W. and Thaut, M.H.},
+	month = jun,
+	year = {2003},
+	pages = {141--144}
+}
+
+@article{burges_tutorial_1998,
+	title = {A Tutorial on Support Vector Machines for Pattern Recognition},
+	volume = {2},
+	issn = {1384-5810},
+	url = {http://dx.doi.org/10.1023/A%3A1009715923555},
+	doi = {10.1023/A:1009715923555},
+	language = {English},
+	number = {2},
+	journal = {Data Mining and Knowledge Discovery},
+	author = {Burges, ChristopherJ.C.},
+	year = {1998},
+	keywords = {pattern recognition, statistical learning theory, support vector machines, {VC} dimension},
+	pages = {121--167}
+}
+
+@inproceedings{grierson_better_2011,
+	title = {Better brain interfacing for the masses: progress in event-related potential detection using commercial brain computer interfaces},
+	isbn = {9781450302685},
+	shorttitle = {Better brain interfacing for the masses},
+	url = {http://portal.acm.org/citation.cfm?doid=1979742.1979828},
+	doi = {10.1145/1979742.1979828},
+	language = {en},
+	urldate = {2014-06-14},
+	publisher = {{ACM} Press},
+	author = {Grierson, Mick and Kiefer, Chris},
+	year = {2011},
+	pages = {1681}
+}
+
+@inproceedings{das_unsupervised_2013,
+	title = {Unsupervised approach for measurement of cognitive load using {EEG} signals},
+	isbn = {978-1-4799-3163-7},
+	url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6701686},
+	doi = {10.1109/BIBE.2013.6701686},
+	urldate = {2014-06-14},
+	publisher = {{IEEE}},
+	author = {Das, Diptesh and Chatterjee, Debatri and Sinha, Aniruddha},
+	month = nov,
+	year = {2013},
+	pages = {1--6}
+}
+
+@article{ali_empirical_2014,
+	title = {Empirical neuroenchantment: from reading minds to thinking critically},
+	volume = {8},
+	issn = {1662-5161},
+	shorttitle = {Empirical neuroenchantment},
+	url = {http://www.frontiersin.org/Human_Neuroscience/10.3389/fnhum.2014.00357/abstract},
+	doi = {10.3389/fnhum.2014.00357},
+	urldate = {2014-06-14},
+	journal = {Frontiers in Human Neuroscience},
+	author = {Ali, Sabrina S. and Lifshitz, Michael and Raz, Amir},
+	month = may,
+	year = {2014}
+}
+
+@article{fan_liblinear:_2008,
+	title = {{LIBLINEAR:} A Library for Large Linear Classification},
+	volume = {9},
+	issn = {1532-4435},
+	url = {http://dl.acm.org/citation.cfm?id=1390681.1442794},
+	journal = {J. Mach. Learn. Res.},
+	author = {Fan, Rong-En and Chang, Kai-Wei and Hsieh, Cho-Jui and Wang, Xiang-Rui and Lin, Chih-Jen},
+	month = jun,
+	year = {2008},
+	pages = {1871–1874}
+}
+
+@article{ekandem_evaluating_2012,
+	title = {Evaluating the ergonomics of {BCI} devices for research and experimentation},
+	volume = {55},
+	number = {5},
+	journal = {Ergonomics},
+	author = {Ekandem, Joshua I and Davis, Timothy A and Alvarez, Ignacio and James, Melva T and Gilbert, Juan E},
+	year = {2012},
+	pages = {592–598}
+}
+
+@incollection{d._mattia_brain_2011,
+	title = {Brain Computer Interface For Hand Motor Function Restoration And Rehabilitation},
+	booktitle = {Towards Practical Brain Computer Interfaces},
+	publisher = {Springer, Biological and Medical Physics, Biomedical Engineering},
+	author = {D. Mattia, F. Pichiorri, M. Molinari, R. Rupp},
+	year = {2011}
+}
+
+@inproceedings{campbell_neurophone:_2010,
+	title = {{NeuroPhone:} brain-mobile phone interface using a wireless {EEG} headset},
+	booktitle = {Proceedings of the second {ACM} {SIGCOMM} workshop on Networking, systems, and applications on mobile handhelds},
+	publisher = {{ACM}},
+	author = {Campbell, Andrew and Choudhury, Tanzeem and Hu, Shaohan and Lu, Hong and Mukerjee, Matthew K and Rabbi, Mashfiqui and Raizada, Rajeev DS},
+	year = {2010},
+	pages = {3–8}
+}
+
+@inproceedings{crowley_evaluating_2010,
+	title = {Evaluating a Brain-Computer Interface to Categorise Human Emotional Response.},
+	booktitle = {{ICALT}},
+	author = {Crowley, Katie and Sliney, Aidan and Pitt, Ian and Murphy, Dave},
+	year = {2010},
+	pages = {276–278}
+}
+
+@article{jain_statistical_2000,
+	title = {Statistical pattern recognition: A review},
+	volume = {22},
+	number = {1},
+	journal = {Pattern Analysis and Machine Intelligence, {IEEE} Transactions on},
+	author = {Jain, Anil K and Duin, Robert P. W. and Mao, Jianchang},
+	year = {2000},
+	pages = {4–37}
+}
+
+@article{raudys_small_1991,
+	title = {Small sample size effects in statistical pattern recognition: Recommendations for practitioners},
+	volume = {13},
+	number = {3},
+	journal = {{IEEE} Transactions on pattern analysis and machine intelligence},
+	author = {Raudys, Sarunas J and Jain, Anil K.},
+	year = {1991},
+	pages = {252–264}
+}
+
+@article{vidaurre_towards_2010,
+	title = {Towards a cure for {BCI} illiteracy},
+	volume = {23},
+	number = {2},
+	journal = {Brain topography},
+	author = {Vidaurre, Carmen and Blankertz, Benjamin},
+	year = {2010},
+	pages = {194–198}
+}
+
+@article{blankertz_non-invasive_2007,
+	title = {The non-invasive Berlin brain–computer interface: fast acquisition of effective performance in untrained subjects},
+	volume = {37},
+	number = {2},
+	journal = {{NeuroImage}},
+	author = {Blankertz, Benjamin and Dornhege, Guido and Krauledat, Matthias and Müller, Klaus-Robert and Curio, Gabriel},
+	year = {2007},
+	pages = {539–550}
+}

@@ -18,19 +18,21 @@
 
 \documentclass[runningheads,a4paper]{llncs}
 
-\usepackage{nomencl}
-\usepackage{amssymb}
-\usepackage{todonotes}
+
+% \usepackage{nomencl}
+% \usepackage{amssymb}
+% \usepackage{todonotes}
 \setcounter{tocdepth}{3}
-\usepackage{graphicx}
-\usepackage{enumitem}
-\usepackage{url}
+% \usepackage{graphicx}
+% \usepackage{enumitem}
+% \usepackage{url}
+
 %\urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
 %\urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
 %\urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
-\usepackage[unicode=true]{hyperref}
+% \usepackage[unicode=true]{hyperref}
 
 \begin{document}
 
@@ -62,7 +64,7 @@
 %% unless you accept that it will be published
 \institute{School of Information,\\
 UC Berkeley, Berkeley,\\
-United States}
+A M E R I C A}
 %%\mailsa\\
 %%\mailsb\\
 %%\mailsc\\
@@ -81,10 +83,13 @@ United States}
 \maketitle
 
 \input{Sections/intro}
+\input{Sections/background}
 \input{Sections/method}
-\input{Sections/results}
+%\input{Sections/results}
+\input{Sections/discussion}
+
 \bibliographystyle{abbrv}
-%\bibliography{bib/tmaillart.bib,bib/references.bib}
+\bibliography{references}
 
 
 \end{document}
