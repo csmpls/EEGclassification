@@ -5,3 +5,5 @@
 *.blg
 *.toc
 *.pdf
+*.out
+*.synctext.gz
